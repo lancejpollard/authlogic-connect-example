@@ -1,0 +1,6 @@
+%h1 Register
+
+- form_for @user, :url => users_path do |f|
+  = render :partial => "form", :object => f
+  %input{:type => :hidden, :name => "oauth_provider", :value => "twitter"}
+  %input{:type => :submit, :name => "register_with_oauth", :value => "Submit"}

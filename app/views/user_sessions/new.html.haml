@@ -1,0 +1,14 @@
+%h1 Login
+- User.logged_in_timeout(10.hours)
+%h2= User.logged_in.inspect
+
+= @user_session.errors.inspect
+- form_for @user_session, :url => user_session_path do |f|
+  %br
+  = f.label :login
+  = f.text_field :login
+  %br
+  = f.label :remember_me
+  = f.check_box :remember_me
+  %br
+    %input{:type => :submit, :name => "login_with_oauth", :value => "Submit"}

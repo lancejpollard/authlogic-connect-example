@@ -1,0 +1,13 @@
+!!!
+%html{:dir => "ltr", :lang => "en-US", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head{:profile => "http://gmpg.org/xfn/11"}
+    %title Authlogic Connect Example
+    = render :partial => "shared/head"
+  %body
+    #wrapper
+      = render :partial => "shared/logo"
+      #page-container
+        %ul#page.jcarousel-skin-tango
+          %li
+            = render "users/new"
+        .shadow
