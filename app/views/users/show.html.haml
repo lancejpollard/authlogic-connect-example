@@ -1,3 +1,7 @@
-%h1= @user.login
+%h2= "Hi #{@profile["name"]}!"
 
-= link_to 'Edit', edit_account_path
+- case @user.active_token.service_name.to_s
+  - when "facebook"
+    %p
+      %img.profile{:src => "https://graph.facebook.com/#{@profile["id"]}/picture"}
+      %a{:href => @profile["link"]} Your on Facebook!

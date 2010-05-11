@@ -1,3 +1,5 @@
+# Authlogic Connect Example
+
 ## Install and use
 
     git clone

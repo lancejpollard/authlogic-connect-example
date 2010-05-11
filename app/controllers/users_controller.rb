@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
   def show
     @user = @current_user
+    @profile = JSON.parse(@user.active_token.get("/me"))
   end
 
   def edit
@@ -37,5 +38,11 @@ class UsersController < ApplicationController
         render :action => :edit
       end
     end
+  end
+  
+  # for debugging...
+  def destroy_all
+    User.all.collect(&:destroy)
+    redirect_to "/users/new"
   end
 end
