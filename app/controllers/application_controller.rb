@@ -13,6 +13,16 @@ class ApplicationController < ActionController::Base
   end
   
   private
+    def admin_only
+      if Rails.env == "production"
+        authenticate_or_request_with_http_basic do |id, password|
+          puts "ID: #{id.to_s}"
+          puts "PASS: #{password.to_s}"
+          id == ENV["USER"] && password == ENV["PASSWORD"]
+        end
+      end
+    end
+    
     def current_user_session
       return @current_user_session if defined?(@current_user_session)
       @current_user_session = UserSession.find
