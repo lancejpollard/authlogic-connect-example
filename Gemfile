@@ -9,4 +9,4 @@ gem "ruby-openid"
 gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "rails3"
 gem "oauth"
 gem "oauth2"
-gem "authlogic-connect"
+gem "authlogic-connect" # version 0.0.3+
