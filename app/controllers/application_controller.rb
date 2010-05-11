@@ -16,8 +16,6 @@ class ApplicationController < ActionController::Base
     def admin_only
       if Rails.env == "production"
         authenticate_or_request_with_http_basic do |id, password|
-          puts "ID: #{id.to_s}"
-          puts "PASS: #{password.to_s}"
           id == ENV["USER"] && password == ENV["PASSWORD"]
         end
       end
