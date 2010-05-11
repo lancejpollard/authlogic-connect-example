@@ -8,5 +8,5 @@ gem "haml"
 gem "ruby-openid"
 gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "rails3"
 gem "oauth"
-gem "oauth2" # facebook only
+gem "oauth2"
 gem "authlogic-connect"

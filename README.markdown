@@ -1,5 +1,7 @@
 # Authlogic Connect Example
 
+http://www.themodestrubyist.com/2010/03/05/rails-3-plugins---part-2---writing-an-engine/
+
 ## Install and use
 
     git clone

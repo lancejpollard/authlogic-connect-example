@@ -2,10 +2,6 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-puts "require!!!!!!"
-require 'rubygems'
-require 'authlogic-connect'
-
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module AuthlogicConnectExample
