@@ -1,5 +1,5 @@
 %h2 Login or Register!
-%form#authentication_form{:action => "/users", :method => :post}
+%form#authentication_form{:action => register_url, :method => :post}
   %fieldset
     %input{:type => :hidden, :name => :register_with_oauth, :value => "oauth"}
     %legend Click your Oauth or OpenID provider.

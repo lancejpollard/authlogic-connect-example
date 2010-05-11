@@ -1,15 +1,13 @@
 %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
-%meta{:content => "Just another WordPress weblog", :name => "description"}/
+%meta{:content => "", :name => "description"}/
 = yield :meta_head
 
 %link{:href => "/stylesheets/reset.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
 %link{:href => "/stylesheets/application.css", :rel => "stylesheet", :type => "text/css"}/
 = yield :stylesheet_head
 
-= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
--#
-  - %w(jquery/jquery-1.4.2 jquery/jquery.system-0.1.1).each do |javascript|
-    = javascript_include_tag "http://cachedcommons.org/javascripts/#{javascript}.js"
+- %w(jquery/jquery-1.4.2 jquery/jquery.rails).each do |javascript|
+  = javascript_include_tag "http://cachedcommons.org/javascripts/#{javascript}-min.js"
 - %w(jquery.jcarousel.pack cufon.yui kievit).each do |javascript|
   = javascript_include_tag "/javascripts/#{javascript}.js"
 

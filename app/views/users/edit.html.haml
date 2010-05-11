@@ -1,9 +1,9 @@
 %h2 My Account
-%form#authentication_form{:action => "/users", :method => :post}
+%form#authentication_form{:action => connect_url, :method => :post}
   %fieldset
     %input{:type => :hidden, :name => :register_with_oauth, :value => "oauth"}
     %input{:type => :hidden, :name => :_method, :value => :put}
-    %legend Click your Oauth or OpenID provider.
+    %legend Add another Oauth or OpenID provider.
     .oauth_providers
       %ul
         - %w(google facebook twitter).each do |name|

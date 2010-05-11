@@ -310,7 +310,7 @@ input.submit::-moz-focus-inner, input[type="button"]::-moz-focus-inner {
 .clearfix {
   clear:both;
 }
-input.nice{
+input.nice {
 	width:477px;
 	height:21px;
 	border:none;
@@ -322,4 +322,10 @@ input.nice{
 legend {
   position:relative;
   display:inline;
+}
+img.profile {
+  display:block;
+  text-align:center;
+  margin:auto;
+  padding:30px;
 }

@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user.save do |result|
       if result
         flash[:notice] = "Account registered!"
-        redirect_back_or_default account_url
+        redirect_back_or_default profile_url(@user)
       else
         render :action => :new
       end
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def show
     @user = @current_user
-    @profile = JSON.parse(@user.active_token.get("/me"))
+    @profile = @user.profile
   end
 
   def edit
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     @user.update_attributes(params[:user]) do |result|
       if result
         flash[:notice] = "Account updated!"
-        redirect_to account_url
+        redirect_to profile_url(@user)
       else
         render :action => :edit
       end
@@ -41,8 +41,8 @@ class UsersController < ApplicationController
   end
   
   # for debugging...
-  def destroy_all
-    User.all.collect(&:destroy)
-    redirect_to "/users/new"
+  def detonate
+    User.all.collect(&:destroy) if Rails.env == "development"
+    redirect_to signup_url
   end
 end

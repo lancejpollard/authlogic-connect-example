@@ -1,14 +1,17 @@
-%h1 Login
-- User.logged_in_timeout(10.hours)
-%h2= User.logged_in.inspect
-
-= @user_session.errors.inspect
-- form_for @user_session, :url => user_session_path do |f|
-  %br
-  = f.label :login
-  = f.text_field :login
-  %br
-  = f.label :remember_me
-  = f.check_box :remember_me
-  %br
-    %input{:type => :submit, :name => "login_with_oauth", :value => "Submit"}
+%h2 Login!
+%form#authentication_form{:action => authenticate_url, :method => :post}
+  %fieldset
+    %input{:type => :hidden, :name => :login_with_oauth, :value => "oauth"}
+    %legend Click your Oauth or OpenID provider.
+    .oauth_providers
+      %ul
+        - %w(google facebook twitter).each do |name|
+          %li.oauth_provider
+            %img{:src => "/images/icons/#{name}.png"}
+            %input{:type => :radio, :id => "#{name}_oauth_provider", :name => :oauth_provider, :value => name}
+        .clearfix
+  %fieldset
+    %legend Or type in your OpenID address
+    .openid_address
+      %input.nice{:type => :text, :name => "openid_identifier"}
+  %input.submit{:name => :submit, :type => :submit, :value => "Register"}/
