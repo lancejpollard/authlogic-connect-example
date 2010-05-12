@@ -12,3 +12,7 @@
             .content
               = yield
         .shadow
+      - if current_user
+        .actions
+          %a.nice{:href => edit_user_path(@user)} Edit
+          %a.nice{:href => logout_path} Logout

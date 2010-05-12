@@ -13,7 +13,7 @@ class UserSessionsController < ApplicationController
     @user_session.save do |result|
       if result
         flash[:notice] = "Login successful!"
-        redirect_back_or_default current_user ? profile_url(current_user) : signup_path
+        redirect_to current_user ? profile_url(current_user) : login_url
       else
         render :action => :new
       end
@@ -23,6 +23,6 @@ class UserSessionsController < ApplicationController
   def destroy
     current_user_session.destroy
     flash[:notice] = "Logout successful!"
-    redirect_back_or_default login_url
+    redirect_to login_url
   end
 end
