@@ -1,5 +1,5 @@
 %h2 My Account
-%form#authentication_form{:action => connect_url, :method => :post}
+%form#authentication_form{:action => connect_url, :method => :put}
   %fieldset
     %input{:type => :hidden, :name => :register_with_oauth, :value => "oauth"}
     %input{:type => :hidden, :name => :_method, :value => :put}

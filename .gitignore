@@ -3,4 +3,4 @@
 db/*.sqlite3
 log/*.log
 tmp/**/*
-config/initializers/authlogic_connect_config.rb
+config/authlogic.yml

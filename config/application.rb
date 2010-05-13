@@ -18,3 +18,5 @@ module AuthlogicConnectExample
     config.filter_parameters += [:password, :password_confirmation]
   end
 end
+
+Haml::Template::options[:ugly] = false

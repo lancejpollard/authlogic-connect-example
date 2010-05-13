@@ -6,6 +6,7 @@ gem "thin"
 gem "json"
 gem "haml"
 gem "ruby-openid"
+gem 'rack-openid', '>=0.2.1', :require => 'rack/openid'
 gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "rails3"
 gem "oauth"
 gem "oauth2"

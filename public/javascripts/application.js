@@ -4,17 +4,6 @@ Cufon.replace('h2, p, legend');
 $(document).ready(function() {
   $form = $("#authentication_form");
   
-  $('#page').jcarousel({
-  	vertical: true,
-      easing: 'BounceEaseOut',
-      animation: 1000,
-      scroll: 1,
-      visible: 1,
-      initCallback: carouselClickHandler,
-      buttonNextHTML: null,
-      buttonPrevHTML: null
-  });
-
   // progressively enhance buttons
   $("li.oauth_provider").each(function(index, element) {
     var li = $(element);
@@ -30,6 +19,8 @@ $(document).ready(function() {
       return false;
     });
   });
+  
+  $.trackPage($('meta[name=google-analytics]').attr('content'));
 });
 
 function carouselClickHandler(carousel) {

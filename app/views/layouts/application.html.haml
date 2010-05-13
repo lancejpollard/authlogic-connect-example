@@ -7,7 +7,7 @@
     #wrapper
       = render :partial => "shared/logo"
       #page-container
-        %ul#page.jcarousel-skin-tango
+        %ul#page.container
           %li
             .content
               = yield
@@ -16,3 +16,5 @@
         .actions
           %a.nice{:href => edit_user_path(@user)} Edit
           %a.nice{:href => logout_path} Logout
+
+    = render :partial => "shared/github"
