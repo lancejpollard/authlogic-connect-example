@@ -7,7 +7,7 @@ when "development"
   AuthlogicConnect.config = YAML.load_file("config/authlogic.yml")
 when "production"
   AuthlogicConnect.config = {
-    :services => {
+    :connect => {
       :twitter => {
         :key => ENV["SERVICES_TWITTER_KEY"],
         :secret => ENV["SERVICES_TWITTER_SECRET"],
@@ -29,7 +29,7 @@ when "production"
         :label => "Yahoo"
       },
       :vimeo => {
-      
+    
       }
     }
   }
