@@ -6,7 +6,7 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module AuthlogicConnectExample
   class Application < Rails::Application
-    config.middleware.use AuthlogicConnect::CallbackFilter
+    #config.middleware.use AuthlogicConnect::CallbackFilter
     
     config.generators do |g|
       g.orm             :active_record
@@ -18,5 +18,3 @@ module AuthlogicConnectExample
     config.filter_parameters += [:password, :password_confirmation]
   end
 end
-
-Haml::Template::options[:ugly] = false
