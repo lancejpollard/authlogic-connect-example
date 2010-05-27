@@ -3,13 +3,15 @@ class CreateTokens < ActiveRecord::Migration
     create_table :tokens do |t|
       t.integer :user_id
       t.string :type, :limit => 30
-      t.string :key, :limit => 1024 # This has to be huge because of Yahoo's excessively large tokens
+      t.string :key # how we identify the user, in case they logout and log back in
+      t.string :token, :limit => 1024 # This has to be huge because of Yahoo's excessively large tokens
       t.string :secret
       t.boolean :active # whether or not it's associated with the account
       t.timestamps
     end
     
     add_index :tokens, :key, :unique
+    add_index :tokens, :token, :unique
   end
 
   def self.down

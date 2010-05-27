@@ -14,7 +14,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_login_ip
       t.string :current_login_ip
       # authlogic-connect
-      t.string :openid_identifier # should be a token, later...
       t.integer :active_token_id
     end
     

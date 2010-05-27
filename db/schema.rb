@@ -24,7 +24,8 @@ ActiveRecord::Schema.define(:version => 20100506020520) do
   create_table "tokens", :force => true do |t|
     t.integer  "user_id"
     t.string   "type",       :limit => 30
-    t.string   "key",        :limit => 1024
+    t.string   "key"
+    t.string   "token",      :limit => 1024
     t.string   "secret"
     t.boolean  "active"
     t.datetime "created_at"
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20100506020520) do
   end
 
   add_index "tokens", ["key"], :name => "index_tokens_on_key", :unique => true
+  add_index "tokens", ["token"], :name => "index_tokens_on_token", :unique => true
 
   create_table "users", :force => true do |t|
     t.datetime "created_at"

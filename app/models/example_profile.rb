@@ -1,4 +1,4 @@
-module Profile
+module ExampleProfile
   def self.included(base)
     base.class_eval do
       include InstanceMethods

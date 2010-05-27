@@ -1,7 +1,7 @@
 %h2 My Account
-%form#authentication_form{:action => connect_url, :method => :put}
+%form#authentication_form{:action => connect_path, :method => :post}
   %fieldset
-    %input{:type => :hidden, :name => :register_with_oauth, :value => "oauth"}
+    %input{:type => :hidden, :name => :authentication_type, :value => :user}
     %input{:type => :hidden, :name => :_method, :value => :put}
     %legend Add another Oauth or OpenID provider.
     .oauth_providers

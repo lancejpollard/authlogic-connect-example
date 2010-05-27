@@ -1,7 +1,8 @@
 %h2 Login!
 %form#authentication_form{:action => authenticate_url, :method => :post}
   %fieldset
-    %input{:type => :hidden, :name => :login_with_oauth, :value => "oauth"}
+    %input{:type => :hidden, :name => :authentication_method, :value => :oauth}
+    %input{:type => :hidden, :name => :authentication_type, :value => :session}
     %legend Click your Oauth or OpenID provider.
     .oauth_providers
       %ul

@@ -1,7 +1,8 @@
 %h2 Login or Register!
 %form#authentication_form{:action => register_url, :method => :post}
   %fieldset
-    %input{:type => :hidden, :name => :register_with_oauth, :value => "oauth"}
+    / authentication_type should be "user" or "session", based on controller
+    %input{:type => :hidden, :name => :authentication_type, :value => :user}
     %legend Click your Oauth or OpenID provider.
     .oauth_providers
       %ul

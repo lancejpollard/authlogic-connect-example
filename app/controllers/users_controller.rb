@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-
+  
   def create
     @user = User.new(params[:user])
     # block! see user_sessions_controller.rb for description
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       end
     end
   end
-
+  
   def show
     @user = @current_user
     @profile = @user.profile
@@ -43,7 +43,9 @@ class UsersController < ApplicationController
   
   # for debugging...
   def detonate
+    session.clear
     User.all.collect(&:destroy)
+    Token.all.collect(&:destroy)
     redirect_to signup_url
   end
 end

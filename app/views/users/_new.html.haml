@@ -1,7 +1,8 @@
 %h2 Login or Register!
 %form#authentication_form{:action => "/users", :method => :post}
-  %fieldset
-    %input{:type => :hidden, :name => :register_with_oauth}
+  %fieldset  
+    / authentication_method parameter can be set to "oauth" or "open_id"
+    %input{:type => :hidden, :name => :authentication_method, :value => :oauth}
     %legend Click your Oauth or OpenID provider.
     .oauth_providers
       %ul
