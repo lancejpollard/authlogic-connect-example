@@ -34,5 +34,6 @@ task :heroku_vars do
   vars.each do |k,v|
     command << "#{k.to_s.upcase}=#{v.to_s} "
   end
-  
+  puts "command"
+  puts command
 end

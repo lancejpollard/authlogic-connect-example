@@ -9,28 +9,40 @@ when "production"
   AuthlogicConnect.config = {
     :connect => {
       :twitter => {
-        :key => ENV["SERVICES_TWITTER_KEY"],
-        :secret => ENV["SERVICES_TWITTER_SECRET"],
+        :key => ENV["CONNECT_TWITTER_KEY"],
+        :secret => ENV["CONNECT_TWITTER_SECRET"],
         :label => "Twitter"
       },
       :facebook => {
-        :key => ENV["SERVICES_FACEBOOK_KEY"],
-        :secret => ENV["SERVICES_FACEBOOK_SECRET"],
+        :key => ENV["CONNECT_FACEBOOK_KEY"],
+        :secret => ENV["CONNECT_FACEBOOK_SECRET"],
         :label => "Facebook"
       },
       :google => {
-        :key => ENV["SERVICES_GOOGLE_KEY"],
-        :secret => ENV["SERVICES_GOOGLE_SECRET"],
+        :key => ENV["CONNECT_GOOGLE_KEY"],
+        :secret => ENV["CONNECT_GOOGLE_SECRET"],
         :label => "Google"
       },
       :yahoo => {
-        :key => ENV["SERVICES_YAHOO_KEY"],
-        :secret => ENV["SERVICES_YAHOO_SECRET"],
+        :key => ENV["CONNECT_YAHOO_KEY"],
+        :secret => ENV["CONNECT_YAHOO_SECRET"],
         :label => "Yahoo"
       },
       :vimeo => {
-    
-      }
+        :key => ENV["CONNECT_VIMEO_KEY"],
+        :secret => ENV["CONNECT_VIMEO_SECRET"],
+        :label => "Vimeo"
+      },
+      :linked_in => {
+        :key => ENV["CONNECT_LINKED_IN_KEY"],
+        :secret => ENV["CONNECT_LINKED_IN_SECRET"],
+        :label => "LinkedIn"
+      },
+      :myspace => {
+        :key => ENV["CONNECT_MYSPACE_KEY"],
+        :secret => ENV["CONNECT_MYSPACE_SECRET"],
+        :label => "MySpace"
+      },
     }
   }
 end
