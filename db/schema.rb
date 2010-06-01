@@ -11,17 +11,7 @@
 
 ActiveRecord::Schema.define(:version => 20100506020520) do
 
-  create_table "sessions", :force => true do |t|
-    t.string   "session_id", :null => false
-    t.text     "data"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
-  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
-
-  create_table "tokens", :force => true do |t|
+  create_table "access_tokens", :force => true do |t|
     t.integer  "user_id"
     t.string   "type",       :limit => 30
     t.string   "key"
@@ -32,8 +22,17 @@ ActiveRecord::Schema.define(:version => 20100506020520) do
     t.datetime "updated_at"
   end
 
-  add_index "tokens", ["key"], :name => "index_tokens_on_key", :unique => true
-  add_index "tokens", ["token"], :name => "index_tokens_on_token", :unique => true
+  add_index "access_tokens", ["key"], :name => "index_access_tokens_on_key", :unique => true
+
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
     t.datetime "created_at"

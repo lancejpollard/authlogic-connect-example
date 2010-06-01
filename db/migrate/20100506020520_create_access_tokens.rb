@@ -1,6 +1,6 @@
-class CreateTokens < ActiveRecord::Migration
+class CreateAccessTokens < ActiveRecord::Migration
   def self.up
-    create_table :tokens do |t|
+    create_table :access_tokens do |t|
       t.integer :user_id
       t.string :type, :limit => 30
       t.string :key # how we identify the user, in case they logout and log back in
@@ -10,11 +10,10 @@ class CreateTokens < ActiveRecord::Migration
       t.timestamps
     end
     
-    add_index :tokens, :key, :unique
-    add_index :tokens, :token, :unique
+    add_index :access_tokens, :key, :unique
   end
 
   def self.down
-    drop_table :tokens
+    drop_table :access_tokens
   end
 end
