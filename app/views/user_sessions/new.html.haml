@@ -1,18 +1,19 @@
 %h2 Login!
-%form#authentication_form{:action => authenticate_url, :method => :post}
+- form_for @user_session, :url => authenticate_path, :html => { :method => :post, :class => "authentication_form" } do |f|
+  = f.error_messages
+  / authentication_type should be "user" or "session", based on controller
+  = oauth_login_hidden_input
   %fieldset
-    %input{:type => :hidden, :name => :authentication_method, :value => :oauth}
-    %input{:type => :hidden, :name => :authentication_type, :value => :session}
-    %legend Click your Oauth or OpenID provider.
+    %legend Click your Oauth or OpenID provider
     .oauth_providers
       %ul
-        - %w(google facebook twitter).each do |name|
+        - %w(google facebook twitter yahoo myspace linked_in).each do |name|
           %li.oauth_provider
-            %img{:src => "/images/icons/#{name}.png"}
-            %input{:type => :radio, :id => "#{name}_oauth_provider", :name => :oauth_provider, :value => name}
+            = image_tag "/images/icons/#{name}.png"
+            = radio_button_tag :oauth_provider, name
         .clearfix
   %fieldset
     %legend Or type in your OpenID address
     .openid_address
-      %input.nice{:type => :text, :name => "openid_identifier"}
-  %input.submit{:name => :submit, :type => :submit, :value => "Register"}/
+      = text_field_tag :openid_identifier, nil, :class => :nice
+  = submit_tag "Login", :class => :submit

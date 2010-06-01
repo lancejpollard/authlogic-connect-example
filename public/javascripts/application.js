@@ -2,7 +2,7 @@ $ = jQuery.noConflict();
 Cufon.replace('h2, p, legend');
 
 $(document).ready(function() {
-  $form = $("#authentication_form");
+  $form = $(".authentication_form");
   
   // progressively enhance buttons
   $("li.oauth_provider").each(function(index, element) {

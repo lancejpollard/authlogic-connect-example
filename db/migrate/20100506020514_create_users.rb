@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       # authlogic
       t.timestamps
       t.string :login, :null => true
+      t.string :email, :null => true
       t.string :crypted_password, :null => true
       t.string :password_salt, :null => true
       t.string :persistence_token, :null => false

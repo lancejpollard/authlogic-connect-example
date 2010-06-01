@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-  
+
   def create
     @user = User.new(params[:user])
     # block! see user_sessions_controller.rb for description
@@ -15,12 +15,13 @@ class UsersController < ApplicationController
         flash[:notice] = "Account registered!"
         redirect_back_or_default profile_url(@user)
       else
-        render :action => :new
+        redirect_to login_url
       end
     end
   end
-  
+
   def show
+    puts "SESSION: #{session.inspect}"
     @user = @current_user
     @profile = @user.profile
   end
@@ -30,6 +31,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    return create unless @current_user
     @user = @current_user # makes our views "cleaner" and more consistent
     @user.update_attributes(params[:user]) do |result|
       if result
@@ -45,7 +47,6 @@ class UsersController < ApplicationController
   def detonate
     session.clear
     User.all.collect(&:destroy)
-    Token.all.collect(&:destroy)
-    redirect_to signup_url
+    redirect_to login_url
   end
 end

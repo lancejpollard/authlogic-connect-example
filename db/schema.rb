@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20100506020520) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "login"
+    t.string   "email"
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token",                :null => false
@@ -48,7 +49,6 @@ ActiveRecord::Schema.define(:version => 20100506020520) do
     t.datetime "current_login_at"
     t.string   "last_login_ip"
     t.string   "current_login_ip"
-    t.string   "openid_identifier"
     t.integer  "active_token_id"
   end
 

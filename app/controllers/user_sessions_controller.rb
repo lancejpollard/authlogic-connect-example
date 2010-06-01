@@ -15,7 +15,12 @@ class UserSessionsController < ApplicationController
         flash[:notice] = "Login successful!"
         redirect_to current_user ? profile_url(current_user) : login_url
       else
-        render :action => :new
+        if @user_session.errors.on(:user)
+          # if we set error on the base object, likely it's because we didn't find a user
+          render :action => :confirm
+        else
+          render :action => :new
+        end
       end
     end
   end
