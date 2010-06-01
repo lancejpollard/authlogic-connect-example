@@ -12,6 +12,6 @@ AuthlogicConnectExample::Application.routes.draw do |map|
   map.resource :user_session
   
   match ':id' => 'users#show', :as => :profile
-  root :to => "users#new"
+  root :to => "user_sessions#new"
   
 end
