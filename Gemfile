@@ -12,5 +12,3 @@ gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "
 gem "oauth"
 gem "oauth2"
 gem "authlogic-connect", '>=0.0.4.05' #
-
-gem "shoulda", :git => "git://github.com/bmaddy/shoulda", :branch => "rails3"
