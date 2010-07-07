@@ -3,13 +3,6 @@ class ApplicationController < ActionController::Base
   layout 'application'
   helper :all
   helper_method :current_user_session, :current_user
-  before_filter :disallow
-  
-  def disallow
-    if request.referrer.to_s =~ /tocchini/i
-      raise "Disallowed"
-    end
-  end
   
   def login_required
     if current_user.nil?

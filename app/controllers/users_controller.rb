@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
   def show
     puts "SESSION: #{session.inspect}"
+    puts @current_user.access_tokens.inspect
     @user = @current_user
     @profile = @user.profile
   end
@@ -38,6 +39,7 @@ class UsersController < ApplicationController
         flash[:notice] = "Account updated!"
         redirect_to profile_url(@user)
       else
+        raise @user.errors.inspect
         render :action => :edit
       end
     end

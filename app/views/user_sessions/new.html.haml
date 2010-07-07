@@ -7,7 +7,7 @@
     %legend Click your Oauth or OpenID provider
     .oauth_providers
       %ul
-        - %w(google facebook twitter yahoo myspace linked_in).each do |name|
+        - %w(google facebook twitter yahoo myspace github).each do |name|
           %li.oauth_provider
             = image_tag "/images/icons/#{name}.png"
             = radio_button_tag :oauth_provider, name
