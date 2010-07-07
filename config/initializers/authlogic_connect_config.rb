@@ -42,6 +42,11 @@ when "production"
         :key => ENV["CONNECT_MYSPACE_KEY"],
         :secret => ENV["CONNECT_MYSPACE_SECRET"],
         :label => "MySpace"
+      },
+      :github => {
+        :key => ENV["CONNECT_GITHUB_KEY"],
+        :secret => ENV["CONNECT_GITHUB_SECRET"],
+        :label => "Github"
       }
     }
   }
